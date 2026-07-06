@@ -8,3 +8,11 @@
 .vfrc-launcher__container {
   display: none !important;
 }
+
+/* Compact chat window on desktop (mobile keeps fullscreen behavior) */
+@media (min-width: 769px) {
+  .vfrc-chat__container {
+    width: 350px !important;
+    height: min(560px, calc(100dvh - 120px)) !important;
+  }
+}
