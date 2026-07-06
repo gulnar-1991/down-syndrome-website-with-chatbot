@@ -1,0 +1,10 @@
+/* Voiceflow widget-next overrides for Sunny.
+   Loaded into the widget's shadow root via assistant.stylesheet —
+   page-level CSS cannot reach these elements. */
+
+/* Hide the widget's built-in launcher bubble;
+   the site provides its own "Chat with Sunny" button. */
+.vfrc-launcher,
+.vfrc-launcher__container {
+  display: none !important;
+}

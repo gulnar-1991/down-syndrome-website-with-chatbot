@@ -1,0 +1,6 @@
+{
+  "name": "megability website",
+  "description": "Specialized support and individualized care plans for children with Down syndrome, autism, and complex developmental needs in Ottawa, Ontario.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

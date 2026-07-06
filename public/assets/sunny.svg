@@ -1,0 +1,98 @@
+<svg viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sunny, the Megability mascot">
+  <defs>
+    <!-- Warm "sun" body gradient: gold -> orange -> pink -> soft purple -->
+    <linearGradient id="sun-body" x1="60" y1="10" x2="120" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF0BE"/>
+      <stop offset="0.22" stop-color="#FFD877"/>
+      <stop offset="0.46" stop-color="#FFB45C"/>
+      <stop offset="0.68" stop-color="#F892A6"/>
+      <stop offset="0.86" stop-color="#D295DF"/>
+      <stop offset="1" stop-color="#B486E6"/>
+    </linearGradient>
+
+    <!-- Glossy top-left sheen (the pearl highlight) -->
+    <radialGradient id="sun-sheen" cx="0" cy="0" r="1"
+      gradientTransform="translate(74 66) rotate(58) scale(86 70)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Golden bloom near the crown -->
+    <radialGradient id="sun-gold" cx="0" cy="0" r="1"
+      gradientTransform="translate(118 50) rotate(90) scale(58)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE9A0" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Pink iridescent bloom, lower body -->
+    <radialGradient id="sun-pink" cx="0" cy="0" r="1"
+      gradientTransform="translate(70 150) rotate(90) scale(64)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF9DC0" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FF9DC0" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Purple deepening at the base -->
+    <radialGradient id="sun-purple" cx="0" cy="0" r="1"
+      gradientTransform="translate(124 178) rotate(90) scale(70 50)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A472E0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#A472E0" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="sun-soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="sun-halo" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+
+    <path id="sun-shape" d="M100,16
+      C149,16 184,53 184,104
+      C184,139 170,164 150,178
+      C156,190 148,196 138,195
+      C129,194 126,187 119,185
+      C112,183 107,184 100,184
+      C93,184 88,183 81,185
+      C74,187 71,194 62,195
+      C52,196 44,190 50,178
+      C30,164 16,139 16,104
+      C16,53 51,16 100,16 Z"/>
+    <clipPath id="sun-clip"><use href="#sun-shape"/></clipPath>
+  </defs>
+
+  <!-- Soft pearly halo / rim glow -->
+  <use href="#sun-shape" fill="#FFFFFF" opacity="0.55" filter="url(#sun-halo)"/>
+
+  <!-- Body base -->
+  <use href="#sun-shape" fill="url(#sun-body)"/>
+
+  <!-- Iridescent colour blooms (clipped to the body) -->
+  <g clip-path="url(#sun-clip)">
+    <rect x="0" y="0" width="200" height="210" fill="url(#sun-purple)"/>
+    <rect x="0" y="0" width="200" height="210" fill="url(#sun-pink)" style="mix-blend-mode:screen"/>
+    <rect x="0" y="0" width="200" height="210" fill="url(#sun-gold)" style="mix-blend-mode:screen"/>
+    <!-- Glossy sheen -->
+    <rect x="0" y="0" width="200" height="210" fill="url(#sun-sheen)" style="mix-blend-mode:screen"/>
+
+    <!-- Bright specular hotspot -->
+    <ellipse cx="92" cy="52" rx="34" ry="20" fill="#FFFFFF" opacity="0.85" filter="url(#sun-soft)"/>
+    <!-- Small edge sparkles like a glass pearl -->
+    <ellipse cx="34" cy="118" rx="7" ry="10" fill="#FFFFFF" opacity="0.7" filter="url(#sun-soft)"/>
+    <ellipse cx="60" cy="168" rx="9" ry="6" fill="#FFFFFF" opacity="0.55" filter="url(#sun-soft)"/>
+    <ellipse cx="150" cy="150" rx="8" ry="11" fill="#FFFFFF" opacity="0.5" filter="url(#sun-soft)"/>
+  </g>
+
+  <!-- Crisp thin rim light -->
+  <use href="#sun-shape" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1.5"/>
+
+  <!-- Eyes -->
+  <g fill="#3A2B73">
+    <ellipse cx="80" cy="96" rx="9.5" ry="12.5"/>
+    <ellipse cx="120" cy="96" rx="9.5" ry="12.5"/>
+  </g>
+  <!-- Eye catchlights -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="76.5" cy="90" rx="2.6" ry="3.4"/>
+    <ellipse cx="116.5" cy="90" rx="2.6" ry="3.4"/>
+  </g>
+</svg>
