@@ -30,10 +30,14 @@ export default function Chatbot() {
           url: "https://runtime-api.voiceflow.com",
         },
         assistant: {
-          // 'memory' = conversation resets on every page reload / new tab
-          // (start fresh each load). Not 'localStorage' (keeps forever) or
-          // 'sessionStorage' (keeps until all tabs close).
-          persistence: "memory",
+          // 'sessionStorage' = fresh conversation once the browser/all tabs are
+          // closed, but consent (Voiceflow's Legal Disclaimer gate) is remembered
+          // within a session so the launch buttons stay visible.
+          // NOTE: 'memory' (reset on every reload) can't be used here while the
+          // Legal Disclaimer is enabled — it re-prompts consent on every load and
+          // hides the launch buttons. Switch back to 'memory' once the Legal
+          // Disclaimer is turned off in Voiceflow Studio.
+          persistence: "sessionStorage",
           title: "Hi, I'm Sunny! 👋",
           description: "Not a medical service. For emergencies call 911 🚨",
           image: `${window.location.origin}/assets/sunny_pasted_mascot.jpg`,
