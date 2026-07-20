@@ -30,6 +30,10 @@ export default function Chatbot() {
           url: "https://runtime-api.voiceflow.com",
         },
         assistant: {
+          // 'memory' = conversation resets on every page reload / new tab
+          // (start fresh each load). Not 'localStorage' (keeps forever) or
+          // 'sessionStorage' (keeps until all tabs close).
+          persistence: "memory",
           title: "Hi, I'm Sunny! 👋",
           description: "Not a medical service. For emergencies call 911 🚨",
           image: `${window.location.origin}/assets/sunny_pasted_mascot.jpg`,
